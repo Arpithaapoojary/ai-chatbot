@@ -1,0 +1,196 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #121212;  /* Dark background for the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+    overflow: hidden; /* Prevents body overflow */
+  }
+  
+  /* Full-Screen Chat Container */
+  .chat-container {
+    width: 100%;
+    max-width: 800px; /* Width of the chat box */
+    height: 90%;
+    max-height: 800px;
+    background-color: #1e1e1e;  /* Dark gray background for the chat container */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 70px;  /* Adds space at the bottom for input field */
+  }
+  
+  /* Chat Boxes: AI and User */
+  .ai-chat-box,
+  .user-chat-box {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .ai-chat-box {
+    justify-content: flex-start;  /* AI messages on the left */
+  }
+  
+  .user-chat-box {
+    justify-content: flex-end;  /* User messages on the right */
+  }
+  
+  /* AI Chat and User Chat Areas */
+  .ai-chat-area,
+  .user-chat-area {
+    max-width: 75%;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 18px;
+    background-color: #333333; /* AI messages with dark gray background */
+    color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* User Chat Style */
+  .user-chat-area {
+    background-color: #0078d4; /* Blue for user messages */
+    color: white;
+  }
+  
+  /* AI Chat Style */
+  .ai-chat-area {
+    background-color: #444444; /* Darker gray for AI messages */
+  }
+  
+  /* Profile Images for User and AI */
+  .aiImage,
+  .userImage {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Input Area - Positioned Bottom Center */
+  .prompt-area {
+    position: fixed;
+    bottom: 0; /* Fix the input field at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the input box horizontally */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 700px;
+    background-color: #121212; /* Black background for the input area */
+    border-radius: 25px;
+    padding: 12px;
+    z-index: 999;
+  }
+  
+  /* Input Field */
+  .prompt-area input[type="text"] {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    outline: none;
+    color: white;
+  }
+  
+  /* Button */
+  .prompt-area button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #444444;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prompt-area button:hover {
+    background-color: #666666;
+  }
+  
+  .prompt-area button img {
+    width: 18px;
+    height: 18px;
+  }
+ #submit {
+  background-color: transparent;  /* Transparent background */
+  border: none;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+#submit:hover img {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+  
+  /* Hover Effects for Bubbles */
+  .ai-chat-area:hover,
+  .user-chat-area:hover {
+    background-color: #555555; /* Darker gray when hovered */
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .chat-container {
+      max-width: 100%; /* Use full width of the screen on mobile */
+      height: 100%;  /* Full screen height */
+      padding-bottom: 120px;  /* More space at the bottom for input field */
+    }
+  
+    .prompt-area {
+      width: 90%; /* Reduce width of the input area on mobile */
+      padding: 10px; /* Reduce padding for mobile */
+    }
+  
+    .prompt-area input[type="text"] {
+      font-size: 14px; /* Slightly smaller text on mobile */
+    }
+  
+    .ai-chat-area, .user-chat-area {
+      font-size: 14px; /* Smaller font size for chat text */
+    }
+  }
+  
